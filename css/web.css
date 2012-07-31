@@ -1,0 +1,517 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  vertical-align: baseline;
+  outline: 0;
+}
+
+body {
+  height: 100%;
+  line-height: 1.2;
+  background: url('../img/bg.png?1341841516');
+  color: #666666;
+  font-size: 100%;
+  font-family: arial, tahoma, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h1 {
+  color: black;
+  font-size: 40px;
+}
+
+h5 {
+  color: black;
+  font-size: 12px;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  display: inline-block;
+  cursor: hand;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid #cccccc;
+  border-bottom-color: #aaaaaa;
+  color: #666666;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #f2f2f2;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#e0e0e0);
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #e0e0e0));
+  background-image: -webkit-linear-gradient(left top, #ffffff 0%, #e0e0e0 100%);
+  background-image: -moz-linear-gradient(left top, #ffffff 0%, #e0e0e0 100%);
+  background-image: -o-linear-gradient(left top, #ffffff 0%, #e0e0e0 100%);
+  background-image: linear-gradient(left top, #ffffff 0%, #e0e0e0 100%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 -1px 1px white;
+  -webkit-box-shadow: inset 0 0 1px white;
+  -moz-box-shadow: inset 0 0 1px white;
+  box-shadow: inset 0 0 1px white;
+}
+button .icon {
+  float: left;
+}
+button.radio {
+  float: left;
+  display: block;
+}
+button.radio.left {
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+button.radio.right {
+  border-left: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+button:hover {
+  border-color: #999999;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 3px white;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 3px white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 3px white;
+}
+button.selected {
+  border: 1px solid #aaaaaa;
+  border-top-color: #999999;
+  border-bottom-color: #cccccc;
+  background-color: #dddddd;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#e6e6e6,EndColorStr=#dddddd);
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #e6e6e6), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left top, #e6e6e6 0%, #dddddd 100%);
+  background-image: -moz-linear-gradient(left top, #e6e6e6 0%, #dddddd 100%);
+  background-image: -o-linear-gradient(left top, #e6e6e6 0%, #dddddd 100%);
+  background-image: linear-gradient(left top, #e6e6e6 0%, #dddddd 100%);
+  -webkit-box-shadow: inset 0 1px 2px #aaaaaa;
+  -moz-box-shadow: inset 0 1px 2px #aaaaaa;
+  box-shadow: inset 0 1px 2px #aaaaaa;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: hand;
+  cursor: pointer;
+}
+
+::selection {
+  background: #ffffcc;
+  text-shadow: none;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: url('../img/img.web.png?1343062822') no-repeat;
+}
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../img/bg.gradient.png?1341846232') repeat-x left bottom;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  background: url('../img/img.web.png?1343062822') no-repeat;
+}
+.icon.like {
+  background-position: -40px -160px;
+}
+button:hover .icon.like {
+  background-position: -40px -180px;
+}
+button.selected .icon.like {
+  background-position: -40px -180px;
+}
+.icon.hate {
+  background-position: -60px -160px;
+}
+button:hover .icon.hate {
+  background-position: -60px -180px;
+}
+button.selected .icon.hate {
+  background-position: -60px -180px;
+}
+.icon.subscribe {
+  background-position: -80px -160px;
+}
+.icon.subscribe.selected {
+  background-position: -80px -180px;
+}
+button:hover .icon.subscribe {
+  background-position: -80px -180px;
+}
+.icon.block {
+  background-position: -100px -160px;
+}
+button:hover .icon.block {
+  background-position: -100px -180px;
+}
+.icon.conversation {
+  background-position: -120px -180px;
+}
+
+#book {
+  width: 100%;
+  height: 100%;
+  min-width: 860px;
+  min-height: 500px;
+  margin: 0 auto;
+  background: url('../img/bg.book.center.png?1342894785') repeat-y center top;
+  -webkit-transition: margin-left 0.2s ease-in-out;
+  -moz-transition: margin-left 0.2s ease-in-out;
+  -o-transition: margin-left 0.2s ease-in-out;
+  transition: margin-left 0.2s ease-in-out;
+}
+#book .page-wrapper {
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  -o-perspective: 2000px;
+  perspective: 2000px;
+}
+#book .shadow {
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  -moz-transition: -moz-box-shadow 0.5s;
+  -o-transition: -webkit-box-shadow 0.5s;
+  -ms-transition: -ms-box-shadow 0.5s;
+  -webkit-box-shadow: 0 0 10px #999999;
+  -moz-box-shadow: 0 0 10px #999999;
+  box-shadow: 0 0 10px #999999;
+}
+#book .page {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+#book .page button {
+  padding: 6px;
+}
+#book .page h1 {
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  padding: 20px;
+  font-size: 18px;
+}
+#book .page .desc {
+  line-height: 18px;
+  left: 120px;
+  margin: 20px 35% 20px 150px;
+  padding: 8px;
+  font-size: 12px;
+  letter-spacing: 0.4em;
+}
+#book .page .desc:hover {
+  background: #ffffcc;
+}
+#book .page .pic {
+  height: 50%;
+  margin: 0 20px 0 150px;
+}
+#book .page .say {
+  float: right;
+  margin: 0 20px;
+}
+#book .page .say .conversation {
+  clear: both;
+  float: right;
+  width: auto;
+  margin: 10px 4px;
+  padding-left: 18px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cc0000;
+  letter-spacing: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+#book .page .time {
+  position: absolute;
+  margin: 10px 90px;
+  font-size: 12px;
+}
+#book .page .brand {
+  clear: both;
+  float: left;
+  margin: 0 30px;
+}
+#book .page .brand li {
+  clear: both;
+}
+#book .page .brand img {
+  float: left;
+  margin: 0 4px 4px 4px;
+  padding: 1px;
+  border: 2px solid #eeeeee;
+}
+#book .page .brand button {
+  margin: 12px 4px 0 4px;
+}
+#book .page .product {
+  float: left;
+  width: 130px;
+  margin: 100px 0 20px 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e0000000, endColorstr=#e0000000)";
+  font-size: 12px;
+  font-weight: bold;
+}
+#book .page .product h5 {
+  height: 80px;
+}
+#book .page .product label {
+  color: #cc0000;
+  margin-bottom: 4px;
+}
+#book .page .ribbon {
+  position: absolute;
+  width: 40px;
+  margin: 0 30px;
+  letter-spacing: 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+#book .page .ribbon .bg {
+  background: url('../img/img.web.png?1343062822') no-repeat;
+}
+#book .page .ribbon .bg.top {
+  width: 100%;
+  height: 8px;
+  background-position: -400px 0;
+}
+#book .page .ribbon .bg.bottom {
+  width: 100%;
+  height: 50px;
+  background-position: -400px -90px;
+}
+#book .page .ribbon .instruction {
+  color: #cc0000;
+  width: 50px;
+  margin: 4px 0 0 -4px;
+  text-shadow: 0 -1px 1px #cccccc;
+}
+#book .page.hard {
+  height: 100%;
+  border: 1px solid #cccccc;
+}
+#book .page.odd {
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(95%, #ffffff), color-stop(100%, #cacaca));
+  background-image: -webkit-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+  background-image: -moz-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+  background-image: -o-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+  background-image: linear-gradient(right, #ffffff 95%, #cacaca 100%);
+}
+#book .page.odd h1 {
+  right: 0;
+  text-align: right;
+}
+#book .page.even {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(95%, #ffffff), color-stop(100%, #dadada));
+  background-image: -webkit-linear-gradient(left, #ffffff 95%, #dadada 100%);
+  background-image: -moz-linear-gradient(left, #ffffff 95%, #dadada 100%);
+  background-image: -o-linear-gradient(left, #ffffff 95%, #dadada 100%);
+  background-image: linear-gradient(left, #ffffff 95%, #dadada 100%);
+}
+#book .page.even .pic {
+  height: 50%;
+  margin: 0 150px 0 20px;
+}
+#book .page.even .desc {
+  right: 120px;
+  margin: 20px 150px 20px 35%;
+}
+#book .page.even .time {
+  right: 0;
+}
+#book .page.even .say {
+  float: left;
+}
+#book .page.even .say .conversation {
+  float: left;
+}
+#book .page.even .product {
+  float: right;
+  text-align: right;
+}
+#book .page.even .brand {
+  float: right;
+}
+#book .page.even .brand img {
+  float: right;
+}
+#book .page.even .ribbon {
+  right: 0;
+}
+
+/*.book { background:url(../img/bg.book.center.png) repeat-y center top; z-index:0; } */
+#Home .canvas .pic {
+  width: 80%;
+  height: 100%;
+  min-width: 1000px;
+  margin: 0 10%;
+  background: url('../img/pic.cover.female.young.png?1341052501') no-repeat right top;
+}
+#Home .canvas .pic .clickable {
+  float: right;
+  width: 214px;
+  height: 290px;
+  line-height: 290px;
+  margin-top: 192px;
+  margin-right: 76px;
+  background: black;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+#Home .canvas .pic .clickable:hover {
+  color: red;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+#Home .desc {
+  margin: 0 10%;
+  padding-top: 220px;
+}
+#Home .desc h1 {
+  margin-bottom: 20px;
+}
+#Home .desc em {
+  color: #cc0000;
+}
+#Home .desc p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+#Home .choices {
+  position: absolute;
+  margin: 40px 8%;
+}
+#Home .choices li {
+  display: inline-block;
+  width: 78px;
+  height: 60px;
+  background: url('../img/img.web.png?1343062822') no-repeat;
+}
+#Home .choices .male20 {
+  background-position: 0 -260px;
+}
+#Home .choices .male20:hover {
+  background-position: 0 -200px;
+}
+#Home .choices .male30 {
+  background-position: -80px -260px;
+}
+#Home .choices .male30:hover {
+  background-position: -80px -200px;
+}
+#Home .choices .female20 {
+  background-position: -160px -260px;
+}
+#Home .choices .female20:hover {
+  background-position: -160px -200px;
+}
+#Home .choices .female30 {
+  background-position: -240px -260px;
+}
+#Home .choices .female30:hover {
+  background-position: -240px -200px;
+}
+#Home .choices .custom {
+  background-position: -320px -260px;
+}
+#Home .choices .custom:hover {
+  background-position: -320px -200px;
+}
+
+#MagazineView .menu {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+}
+#MagazineView .menu li {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  background: url('../img/img.web.png?1343062822') no-repeat;
+}
+#MagazineView .menu li .total {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin-top: -14px;
+  margin-left: -14px;
+  background: url('../img/img.web.png?1343062822') no-repeat 0 -160px;
+}
+#MagazineView .menu .magazine {
+  background-position: -80px 0;
+}
+#MagazineView .menu .magazine:hover {
+  background-position: -80px -80px;
+}
+#MagazineView .menu .magazine.on {
+  background-position: -80px -80px;
+}
+#MagazineView .menu .bookclip {
+  background-position: -160px 0;
+}
+#MagazineView .menu .bookclip:hover {
+  background-position: -160px -80px;
+}
+#MagazineView .menu .bookclip.on {
+  background-position: -160px -80px;
+}
+#MagazineView .menu .friend {
+  background-position: -240px 0;
+}
+#MagazineView .menu .friend:hover {
+  background-position: -240px -80px;
+}
+#MagazineView .menu .friend.on {
+  background-position: -240px -80px;
+}
+#MagazineView .canvas {
+  padding: 80px 40px 40px 140px;
+}
